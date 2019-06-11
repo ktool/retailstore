@@ -34,12 +34,12 @@ eligible discount by percentage = 540 * 0.05 = 27 $
 
 eligible discount by amount considering 5$ for each 100$ purchase = floor(540/100) * 5 = 25 $
 
-In this case, i considered the maximum discount which is 27 $ calculated based on percentage.
+In this case, I considered the maximum discount which is 27 $ calculated based on percentage.
 ```
 ### Prerequisites
 
-This Project is build using Spring boot (2.1.5) and Maven.
-Its starter project is created using spring provided starter interface. https://start.spring.io/.
+This Project is build using Spring boot (2.1.5) and Maven. Its starter project is created using spring provided starter interface. https://start.spring.io/.
+
 Additionally H2 database is used, which is in memory database and respective dependancy added into pom.xml file.
 
 ```
@@ -49,10 +49,9 @@ Additionally H2 database is used, which is in memory database and respective dep
 ```
 
 
-### Use source code
+### Installation & Use source code
 
-Since maven is used as a dependancy management tool, you can import this as a maven project into eclipse. Spring boot starter provide tomcat as a in built tomcat server, this application can be run directly as a spring boot application. Refer deployment section for getting more details about creating and deploying the build in to tomcat or jetty container.
-
+Since maven is used as a dependancy management tool, you can import this as a maven project into eclipse. Refer deployment section for getting more details if you want to create and deploy build into standalone container like tomcat or jetty container.
 
 #### Spring/Java features used
 - spring-boot-starter-data-jpa : For persistence API
@@ -61,11 +60,10 @@ Since maven is used as a dependancy management tool, you can import this as a ma
 - spring-boot-starter-tomcat : tomcat container
 - com.h2database.h2 : In memory database
 
-
 #### Class diagram and details
 [Class Diagram](https://github.com/ktool/retailstore/blob/master/Class_diagram.png)
 
-####Sample data:
+#### Sample data:
 Inside /src/main/resources, i added **data.sql** file which will insert some test data when application context loads into H2 database. So no need to create and manage external database system.
 
 ## Running the tests
@@ -83,16 +81,16 @@ then from run configuration -> Maven Test
 Integration test include the 1 test of User Repository test to verify the DAO layer.
 Service layer tests includes 3 tests for each user type. Store Employee, Affiliate users and customers. 
 
-| File | Layer | Description |
-------------------------------------------
-| UserRepositoryIntegrationTest | DAO (Repository) | User table repository test  |
-| BillingServiceStoreEmployeeIntegrationTest | DAO (Repository) | Billing service tests for Store Employee use case |
-| BillingServiceAffiliateUserIntegrationTest | DAO (Repository) | Billing service tests for Affiliate use case |
-| BillingServiceOldUserIntegrationTest | DAO (Repository) | Billing service tests for customer registered before 2 years use case |
+| UserRepositoryIntegrationTest | DAO (Repository) | User table repository test 
+| BillingServiceStoreEmployeeIntegrationTest | DAO (Repository) | Billing service tests for Store Employee use case
+| BillingServiceAffiliateUserIntegrationTest | DAO (Repository) | Billing service tests for Affiliate use case
+| BillingServiceOldUserIntegrationTest | DAO (Repository) | Billing service tests for customer registered before 2 years use case
 
 ## API Testing
 API testing can be carried out using postman and postman runner functionality. Added the postman collection for all user's on github
-[postman collection](https://github.com/ktool/retailstore/blob/master/run/Online%20Retail%20App.postman_collection.json)
+[postman collection](https://github.com/ktool/retailstore/blob/master/run/Online%20Retail%20App.postman_collection.json).
+
+Just import the collection Postman !!!!!!!
 
 ## Deployment
 
