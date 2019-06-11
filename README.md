@@ -53,6 +53,8 @@ Additionally H2 database is used, which is in memory database and respective dep
 
 Since maven is used as a dependancy management tool, you can import this as a maven project into eclipse. Refer deployment section for getting more details if you want to create and deploy build into standalone container like tomcat or jetty container.
 
+All the services are well documented inside the code in *com.ketul.springboot.onlinestore.retailstore.service* package
+
 #### Spring/Java features used
 - spring-boot-starter-data-jpa : For persistence API
 - spring-boot-starter-web : To provide spring mvc support
@@ -90,7 +92,7 @@ Service layer tests includes 3 tests for each user type. Store Employee, Affilia
 API testing can be carried out using postman and postman runner functionality. Added the postman collection for all user's on github
 [postman collection](https://github.com/ktool/retailstore/blob/master/run/Online%20Retail%20App.postman_collection.json).
 
-Just import the collection Postman !!!!!!!
+Run the project and Just import the collection to Postman !!!!!!!
 
 ## Deployment
 
