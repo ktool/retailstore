@@ -19,6 +19,7 @@ These instructions will get you a copy of the project up and running on your loc
 To satisfy the requirement, I used some predefined constansts (enums) which can be part of DB in with real software implementation.
 
 **User Types** : "STORE_EMPLOYEE" ,  "AFFILIATE" , "CUSTOMER";
+
 **Product categories** : "GROCERY" , "CLOTH" , "TOY";
 
 ## Assumptions and dependancies
@@ -27,11 +28,13 @@ There is a requirement of having only one percentage applicable as a discount, I
 ```
 Scenerio : 
 
-let say for CUSTOMER user who just joined before 3 years. In this case user is applicable to 5% discount. If the total bill amount is 540 $ then : <br/>
-eligible discount by percentage = 540 * 0.05 = 27 $ <br/>
-eligible discount by amount considering 5$ for each 100$ purchase = floor(540/100) * 5 = 25 $ <br/><br/>
+let say for CUSTOMER user who just joined before 3 years. In this case user is applicable to 5% discount. If the total bill amount is 540 $ then : 
 
-In this case, i considered the maximum discount which is 27 $ calculated based on percentage.<br/>
+eligible discount by percentage = 540 * 0.05 = 27 $
+
+eligible discount by amount considering 5$ for each 100$ purchase = floor(540/100) * 5 = 25 $
+
+In this case, i considered the maximum discount which is 27 $ calculated based on percentage.
 ```
 ### Prerequisites
 
