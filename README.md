@@ -2,18 +2,27 @@
 
 Online Retails Store ( Discount module for a billing )
 
+This application provide a service developed using Spring Boot to get discount for given order. Brief requirements about discount are as below.
+On a retail website, the following discounts apply:
+1. If the user is an employee of the store, he gets a 30% discount
+2. If the user is an affiliate of the store, he gets a 10% discount
+3. If the user has been a customer for over 2 years, he gets a 5% discount.
+4. For every $100 on the bill, there would be a $ 5 discount (e.g. for $ 990, you get $ 45
+as a discount).
+5. The percentage based discounts do not apply on groceries.
+6. A user can get only one of the percentage based discounts on a bill.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy or run the project and unit tests.
 
-To satisfy the requirement i used some predefined constansts (enums) which can be part of DB in with real software implementation.
+To satisfy the requirement, I used some predefined constansts (enums) which can be part of DB in with real software implementation.
 
-User Types : "STORE_EMPLOYEE" ,  "AFFILIATE" , "CUSTOMER";
-
-Product categories : "GROCERY" , "CLOTH" , "TOY";
+**User Types** : "STORE_EMPLOYEE" ,  "AFFILIATE" , "CUSTOMER";
+**Product categories** : "GROCERY" , "CLOTH" , "TOY";
 
 ## Assumptions and dependancies
-There is a requirement of having only one percentage applicable as a discount, I considered from percentage based and amount based discounta and applied only maximum possible discount from both discount.
+There is a requirement of having only one percentage applicable as a discount, I considered additionally that at a time only one discount applicable which is either percentage discount or discount based on amount as per #4 above. Also considered maximum possible applicable discount.
 
 ```
 Scenerio : 
@@ -36,12 +45,25 @@ Additionally H2 database is used, which is in memory database and respective dep
 * H2 Database - In Memory database ( no need to install as spring manage it internally ) 
 ```
 
+
 ### Use source code
 
-Since maven is used as a dependancy management tool, you can import this as a maven project into eclipse. 
+Since maven is used as a dependancy management tool, you can import this as a maven project into eclipse. Spring boot starter provide tomcat as a in built tomcat server, this application can be run directly as a spring boot application. Refer deployment section for getting more details about creating and deploying the build in to tomcat or jetty container.
 
-Billing Service:
 
+#### Spring/Java features used
+- spring-boot-starter-data-jpa : For persistence API
+- spring-boot-starter-web : To provide spring mvc support
+- dozer : for mapping of Request bean to BL bean. It's not good practice to use directly request bean !!!!!!
+- spring-boot-starter-tomcat : tomcat container
+- com.h2database.h2 : In memory database
+
+
+#### Class diagram and details
+[Class Diagram](https://github.com/ktool/retailstore/blob/master/Class_diagram.png)
+
+####Sample data:
+Inside /src/main/resources, i added **data.sql** file which will insert some test data when application context loads into H2 database. So no need to create and manage external database system.
 
 ## Running the tests
 
@@ -64,6 +86,10 @@ Service layer tests includes 3 tests for each user type. Store Employee, Affilia
 | BillingServiceStoreEmployeeIntegrationTest | DAO (Repository) | Billing service tests for Store Employee use case |
 | BillingServiceAffiliateUserIntegrationTest | DAO (Repository) | Billing service tests for Affiliate use case |
 | BillingServiceOldUserIntegrationTest | DAO (Repository) | Billing service tests for customer registered before 2 years use case |
+
+## API Testing
+API testing can be carried out using postman and postman runner functionality. Added the postman collection for all user's on github
+[postman collection](https://github.com/ktool/retailstore/blob/master/run/Online%20Retail%20App.postman_collection.json)
 
 ## Deployment
 
