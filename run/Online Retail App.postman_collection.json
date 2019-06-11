@@ -1,0 +1,91 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Online Retail App",
+		"_postman_id": "cae20fae-b39b-c0b9-9999-e557251be66c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Discount Amount store employee - 30%",
+			"request": {
+				"url": "http://localhost:8080/billing/payableamount/10001",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"products\": [\r\n\t{\r\n\t\t\"productName\": \"NikeShoes\",\r\n\t\t\"price\": \"990\",\r\n\t\t\"category\": \"Shoes\"\r\n\t},{\r\n\t\t\"productName\": \"Wheat\",\r\n\t\t\"price\": \"100\",\r\n\t\t\"category\": \"GROCERY\"\r\n\t}\r\n\t]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Discount Amount Affiliate User - 10%",
+			"request": {
+				"url": "http://localhost:8080/billing/payableamount/10002",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"products\": [{\r\n\t\t\"paymentId\": \"JsUMsEXoa\",\r\n\t\t\"trackId\": \"n8iLHNaUY\",\r\n\t\t\"transId\": \"2276923240882440\",\r\n\t\t\"result\": \"CAPTURED\"\r\n\t}]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Discount Amount old customer - 5%",
+			"request": {
+				"url": "http://localhost:8080/billing/payableamount/10003",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"products\": [{\r\n\t\t\"paymentId\": \"JsUMsEXoa\",\r\n\t\t\"trackId\": \"n8iLHNaUY\",\r\n\t\t\"transId\": \"2276923240882440\",\r\n\t\t\"result\": \"CAPTURED\"\r\n\t}]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Discount Amount store employee - No percent or Based on Total",
+			"request": {
+				"url": "http://localhost:8080/billing/payableamount/10004",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"products\": [{\r\n\t\t\"paymentId\": \"JsUMsEXoa\",\r\n\t\t\"trackId\": \"n8iLHNaUY\",\r\n\t\t\"transId\": \"2276923240882440\",\r\n\t\t\"result\": \"CAPTURED\"\r\n\t}]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
