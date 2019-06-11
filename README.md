@@ -84,8 +84,11 @@ Integration test include the 1 test of User Repository test to verify the DAO la
 Service layer tests includes 3 tests for each user type. Store Employee, Affiliate users and customers. 
 
 | UserRepositoryIntegrationTest | DAO (Repository) | User table repository test 
+
 | BillingServiceStoreEmployeeIntegrationTest | DAO (Repository) | Billing service tests for Store Employee use case
+
 | BillingServiceAffiliateUserIntegrationTest | DAO (Repository) | Billing service tests for Affiliate use case
+
 | BillingServiceOldUserIntegrationTest | DAO (Repository) | Billing service tests for customer registered before 2 years use case
 
 ## API Testing
